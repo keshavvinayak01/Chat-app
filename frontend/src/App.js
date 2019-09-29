@@ -1,10 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import InitializeChatComponent from './Components/InitializeChatComponent';
+import ChatComponent from './Components/ChatComponent';
+import WebSocketInstance from './WebSocket';
 
-function App() {
-	return (
-		<h1>Henlo</h1>
-	);
+class App extends Component{
+	constructor(props) {
+		super(props)
+		
+		this.state = {
+			username : '',
+			loggedIn : false
+		};
+	}
+	
+	handleLogin = (username) => {
+		this.setState({loggedIn : true, username : username});
+		WebSocketInstance.connect();
+	}
+
+	render(){
+		const { username,loggedIn } = this.state;
+		return (
+			<div className="App">
+				{
+					loggedIn ?
+					<ChatComponent currentUser={username}
+					/>
+					:
+					<InitializeChatComponent 
+					onSubmit = {this.handleLogin}
+					usernameChangeHandler={this.usernameChangeHandler}
+					/>
+				}
+			</div>
+		);
+	}
+	
 }
 
 export default App;
