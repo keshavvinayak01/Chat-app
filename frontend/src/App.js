@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './static/css/App.css';
 import InitializeChatComponent from './Components/InitializeChatComponent';
 import ChatComponent from './Components/ChatComponent';
 import WebSocketInstance from './WebSocket';
