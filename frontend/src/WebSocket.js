@@ -6,7 +6,7 @@ class WebSocketService{
     
     static getInstance(){
         if (!WebSocketService.instance){
-            WebSocketService = new WebSocketService();
+            WebSocketService.instance = new WebSocketService();
         }
         return WebSocketService.instance;
     }
@@ -36,13 +36,13 @@ class WebSocketService{
     socketNewMessage(data){
         const parsedData = JSON.parse(data);
         const command = parsedData.command;
-        if(Object.keys(this.callbacks).length == 0){
+        if(Object.keys(this.callbacks).length === 0){
             return;
         }
-        if(command == 'messages'){
+        if(command === 'messages'){
             this.callbacks[command](parsedData.messages);
         }
-        if(command == 'new_message'){
+        if(command === 'new_message'){
             this.callbacks[command](parsedData.message);
         }
     }
@@ -80,7 +80,7 @@ class WebSocketService{
         const recursion = this.waitForSocketConnection;
         setTimeout(
             function(){
-                if(socket.readyState == 1){
+                if(socket.readyState === 1){
                     console.log("Connection is made");
                     if(callback != null){
                         callback();
@@ -95,6 +95,6 @@ class WebSocketService{
     }
 }
 
-const WebSocketInstance = WebSocketService.getInstance();
+let WebSocketInstance = WebSocketService.getInstance();
 
 export default WebSocketInstance;

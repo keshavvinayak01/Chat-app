@@ -12,9 +12,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
         }
         if not user:
             content['error'] = 'Unable to get or create User with username : ' + username
-            async self.send(text_data=json.dumps(content))
         content['success'] = 'Chatting success with username : ' + username
-        async self.send(text_data=json.dumps(content))
+        await self.send(text_data=json.dumps(content))
     
     async def fetch_mesages(self, data):
         messages = Messages.recent_messages()

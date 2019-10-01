@@ -21,7 +21,7 @@ class ChatComponent extends Component {
         const component = this;
         setTimeout(
             function(){
-                if(WebSocketInstance.state() == 1){
+                if(WebSocketInstance.state() === 1){
                     console.log('Connection is made');
                     callback();
                     return;
@@ -74,10 +74,9 @@ class ChatComponent extends Component {
 
     renderMessages = (messages) => {
         const currentUser = this.props.currentUser;
-        return messages.map((messages, i) => {
-            <li 
-            key={message.id}
-            className={messages.author === currentUser ? 'me' : 'her'}
+        return messages.map((message, i) => {
+            return (
+            <li key={message.id}className={message.author === currentUser ? 'me' : 'her'}
             >
                 <h4 className='author'>
                     {message.author}
@@ -86,6 +85,8 @@ class ChatComponent extends Component {
                     {message.content}
                 </p>
             </li>
+            );
+
         });
     }
 

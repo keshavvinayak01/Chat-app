@@ -23,7 +23,7 @@ class InitializeChatComponent extends Component {
                     type="text"
                     onChange={this.usernameChangeHandler}
                     value={this.state.username}
-                    placeHolder="Username"
+                    placeholder="Username"
                     required />
                     
                     <button className="submit" type="submit">
