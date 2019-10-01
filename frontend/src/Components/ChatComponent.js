@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../static/css/Chat.scss';
-
 import WebSocketInstance from '../WebSocket';
+
 class ChatComponent extends Component {
     constructor(props) {
         super(props)
