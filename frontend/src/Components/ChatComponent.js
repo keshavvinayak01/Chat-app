@@ -120,7 +120,7 @@ class ChatComponent extends Component {
                         type="text"
                         onChange={this.messageChangeHandler}
                         value={this.state.message}
-                        placeHolder="Start Typing"
+                        placeholder="Start Typing"
                         required />
                         <button type="submit" className="submit" value="Submit">
                             Send

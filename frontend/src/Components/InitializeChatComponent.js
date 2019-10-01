@@ -18,7 +18,7 @@ class InitializeChatComponent extends Component {
     render() {
         return (
             <div className="login">
-                <form onSubmit={() => this.props.handleLogin(this.state.username)} className="form">
+                <form onSubmit={(e) => this.props.handleLogin(e, this.state.username)} className="form">
                     <input 
                     type="text"
                     onChange={this.usernameChangeHandler}

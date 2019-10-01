@@ -16,6 +16,7 @@ class WebSocketService{
     }
 
     connect(){
+        console.log("BOIIIII I got here");
         const path = config.API_PATH;
         this.socketRef = new WebSocket(path);
         

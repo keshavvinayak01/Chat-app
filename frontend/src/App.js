@@ -14,9 +14,11 @@ class App extends Component{
 		};
 	}
 	
-	handleLogin = (username) => {
+	handleLogin = (e, username) => {
+		e.preventDefault();
 		this.setState({loggedIn : true, username : username});
 		WebSocketInstance.connect();
+		console.log(this.state);
 	}
 
 	render(){
@@ -29,7 +31,7 @@ class App extends Component{
 					/>
 					:
 					<InitializeChatComponent 
-					onSubmit = {this.handleLogin}
+					handleLogin = {this.handleLogin}
 					/>
 				}
 			</div>
