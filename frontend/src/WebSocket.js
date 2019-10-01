@@ -16,10 +16,13 @@ class WebSocketService{
     }
 
     connect(){
-        console.log("BOIIIII I got here");
         const path = config.API_PATH;
         this.socketRef = new WebSocket(path);
         
+        this.socketRef.onmessage = e => {
+            this.socketNewMessage(e.data);
+          };
+
         this.socketRef.onopen = () => {
             console.log("WebSocket open");
         };
@@ -44,6 +47,7 @@ class WebSocketService{
             this.callbacks[command](parsedData.messages);
         }
         if(command === 'new_message'){
+            console.log("okay so this was called")
             this.callbacks[command](parsedData.message);
         }
     }
@@ -67,10 +71,11 @@ class WebSocketService{
 
     sendMessage(data){
         try{
+            console.log({...data})
             this.socketRef.send(JSON.stringify({...data}))
         }
         catch(err){
-            console.log(err.messsage);
+            console.log(err.message);
         }
     }
     state(){

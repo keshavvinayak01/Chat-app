@@ -50,6 +50,7 @@ class ChatComponent extends Component {
         this.setState ({
             messages : messages.reverse()
         });
+        console.log('This was called')
     }
     
     messageChangeHandler = (event) => {

@@ -35,6 +35,3 @@ class Message(models.Model):
     author = models.ForeignKey(User, blank = False, null = False, related_name='author_messages', on_delete=models.CASCADE)
     content = models.TextField(validators=[validate_message_content])
     created_at = models.DateTimeField(auto_now_add = True, blank = True)
-
-    def recent_messages(self):
-        return Messages.objects.order_by('-created_at').all()[:50]
