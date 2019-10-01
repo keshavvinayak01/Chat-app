@@ -131,4 +131,4 @@ class ChatComponent extends Component {
     }
 }
 
-export default ChatComponent
+export default ChatComponent;
