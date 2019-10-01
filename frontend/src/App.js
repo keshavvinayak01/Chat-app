@@ -30,7 +30,6 @@ class App extends Component{
 					:
 					<InitializeChatComponent 
 					onSubmit = {this.handleLogin}
-					usernameChangeHandler={this.usernameChangeHandler}
 					/>
 				}
 			</div>
