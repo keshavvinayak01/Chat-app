@@ -8,3 +8,5 @@ This an open ended chatting application where a single channel exists, and anyon
 
 
 ![alt_text](https://github.com/keshavvinayak01/Chat-app/blob/master/media/example.png)
+
+![alt_text](https://github.com/keshavvinayak01/Chat-app/blob/master/media/example2.png)
