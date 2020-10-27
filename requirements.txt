@@ -12,7 +12,7 @@ channels-redis==2.4.0
 chardet==3.0.4
 configparser==3.7.4
 constantly==15.1.0
-cryptography==2.7
+cryptography==3.2
 daphne==2.3.0
 defusedxml==0.6.0
 Django==2.2.4
