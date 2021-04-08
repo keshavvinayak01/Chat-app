@@ -15,7 +15,7 @@ constantly==15.1.0
 cryptography==2.7
 daphne==2.3.0
 defusedxml==0.6.0
-Django==2.2.4
+Django==2.2.20
 django-cors-headers==3.1.0
 djangorestframework==3.10.2
 djangorestframework-jwt==1.11.0
